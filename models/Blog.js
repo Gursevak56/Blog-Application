@@ -13,8 +13,9 @@ const blogSchema = mongoose.Schema({
         required:true
     },
     user:{
-        type:String,
-        required:true
+        type:mongoose.Types.ObjectId,
+        ref:"user"
+
     }
 })
 const Blog = mongoose.model('blog',blogSchema);

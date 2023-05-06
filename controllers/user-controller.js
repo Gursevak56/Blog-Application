@@ -2,7 +2,7 @@ const User = require('./../models/user');
 const bcrypt = require('bcrypt');
 const getalluser = async (req,res,next)=>{
     try {
-        const user = await User.findOne()
+        const user = await User.find()
         res.status(200).json({
             status:'success',
             user:user
@@ -19,7 +19,8 @@ if(!checkuser){
         name:req.body.name,
         email:req.body.email,
         plainpassword:req.body.password,
-        password:securepassword
+        password:securepassword,
+        blog:[]
     }).save();
     res.status(200).json({
         status:'success',

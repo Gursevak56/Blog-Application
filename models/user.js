@@ -18,7 +18,8 @@ const userSchema =mongoose.Schema({
     plainpassword:{
         type:String,
         required:true
-    }
+    },
+    blog:[{type:mongoose.Types.ObjectId,ref:"Blog",required:true}]
 },{
     Timestamp:true
 });
